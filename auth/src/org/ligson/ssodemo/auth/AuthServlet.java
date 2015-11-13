@@ -51,7 +51,7 @@ public class AuthServlet extends javax.servlet.http.HttpServlet {
         String password = request.getParameter("password");
         String pass = (String) users.get(username);
         if ((pass == null) || (!pass.equals(password)))
-            getServletContext().getRequestDispatcher("/failed.html").forward(request, response);
+            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         else {
             String gotoURL = request.getParameter("goto");
             String newID = UUID.randomUUID().toString();
